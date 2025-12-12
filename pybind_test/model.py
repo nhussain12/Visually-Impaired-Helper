@@ -5,27 +5,9 @@ import math
 import json
 from bindings import PriorityQueue
 
-#hazards is a list containing hazardous objects
-hazards = [
-    "remote",
-    "cell phone",
-    "bicycle",
-    "car",
-    "motorbike",
-    "aeroplane",
-    "bus",
-    "train",
-    "truck",
-    "boat",
-    "bird",
-    "dog",
-    "horse",
-    "sheep",
-    "frisbee",
-    "sports ball",
-    "skateboard",
-    "scissors"
-]
+#list containing hazardous objects
+with open("hazards.json", "r") as f:
+    hazards = json.load(f)
 
 def compute_distance(x1, y1, x2, y2):
     return math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2)
